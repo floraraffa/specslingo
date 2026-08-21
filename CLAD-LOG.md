@@ -7,7 +7,7 @@ Development log and representative prompt transcript for the AI-assisted creatio
 - **Florencia:** concept, learning flow, design direction, original UI/mascot/card artwork, UX review, and acceptance decisions.
 - **Codex/OpenAI:** Lens Studio project inspection, TypeScript implementation, UIKit layout, localization, RSG/OpenAI integration, camera and ASR flows, debugging, persistence, preview verification, and repository preparation.
 
-Remote Service Gateway credentials were configured only inside Lens Studio and were never written into project scripts or this repository.
+Remote Service Gateway credentials are configured on the Lens Studio credentials component. For the hackathon repository, the project owner explicitly authorized bundling the OpenAI, Google, and Snap gateway tokens so evaluators can run the submitted scene directly.
 
 ## Aug 12 — independent project and learning concept
 
@@ -103,7 +103,7 @@ Final repository-preparation pass:
 - TypeScript compilation: **succeeded**.
 - Preview boot: **succeeded**.
 - New runtime errors: **0**.
-- Secret scan: no API credentials in public project files.
+- Repository credential decision: OpenAI, Google, and Snap RSG gateway tokens intentionally included by explicit project-owner authorization; local MCP configuration and signing keys remain excluded.
 - Lens Studio caches, local MCP configuration, lock files, and signing keys excluded from Git.
 
 ## CLAD capabilities used

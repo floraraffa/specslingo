@@ -57,7 +57,7 @@ The interface, prompts, feedback, coaching, and language mascot change with the 
 - Kawaii visual system with original illustrated UI and country mascots.
 - Manual per-language artwork slots exposed in the Lens Studio Inspector.
 - Persistent user name, language choices, learned cards, and XP.
-- No API credentials stored in the repository.
+- Hackathon RSG gateway credentials bundled in the scene for evaluator access, as explicitly authorized by the project owner.
 
 ## Built with CLAD
 
@@ -88,7 +88,7 @@ The development history and representative prompts are documented in [CLAD-LOG.m
 1. Clone this repository.
 2. Open `Specslingo 4.esproj` in Lens Studio 5.23.1 or later.
 3. Sign in to Lens Studio.
-4. Configure an OpenAI Remote Service Gateway token from the Lens Studio RSG token panel. Keep the token local—never commit it.
+4. The hackathon build includes the three RSG gateway credentials used by the experience. If they are expired, regenerate OpenAI, Google, and Snap tokens from the Lens Studio RSG token panel.
 5. Run the Preview, or push the Lens to SPECS.
 6. Select a native language, a target language, and one of the two learning modes.
 
