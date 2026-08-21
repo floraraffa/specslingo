@@ -4,7 +4,7 @@
  */
 import {FlexLayout} from "SpectaclesUIKit.lspkg/Scripts/Components/Layout2D/Flex/FlexLayout"
 import {FlexItem} from "SpectaclesUIKit.lspkg/Scripts/Components/Layout2D/Flex/FlexItem"
-import {FlexAlign, FlexDirection, FlexJustify} from "SpectaclesUIKit.lspkg/Scripts/Components/Layout2D/Flex/FlexTypes"
+import {FlexAlign, FlexAlignSelf, FlexDirection, FlexJustify} from "SpectaclesUIKit.lspkg/Scripts/Components/Layout2D/Flex/FlexTypes"
 import {BackPlate} from "SpectaclesUIKit.lspkg/Scripts/BackPlate"
 import {Button} from "SpectaclesUIKit.lspkg/Scripts/Components/Button/Button"
 import {ElementContent} from "SpectaclesUIKit.lspkg/Scripts/Components/Content/ElementContent"
@@ -58,7 +58,7 @@ export class LingoSpaceCompletionUI extends BaseScriptComponent {
     flex.paddingBottom = 2
     flex.paddingLeft = 1.6
     flex.paddingRight = 1.6
-    this.addImage(content, LOGO_TEXTURE, 13.5, 13.5, "Completion Logo")
+    this.addImage(content, LOGO_TEXTURE, 13.5, 13.5, "Completion Logo", undefined, FlexAlignSelf.Center)
     this.title = this.addText(content, "MISSION COMPLETE!", 38, 4.2, 56, 700)
     this.summary = this.addText(content, "HOME 0  •  FOOD 0\nWORK 0  •  TRAVEL 0\nPEOPLE 0  •  OUTSIDE 0", 38, 8, 41, 700)
     this.xpSummary = this.addText(content, "AUDIO XP 0  •  TEXT XP 0\nTOTAL XP 0", 38, 5.2, 44, 700)
@@ -136,7 +136,15 @@ export class LingoSpaceCompletionUI extends BaseScriptComponent {
     return text
   }
 
-  private addImage(parent: SceneObject, texture: Texture, width: number, height: number, name: string, position?: vec3): void {
+  private addImage(
+    parent: SceneObject,
+    texture: Texture,
+    width: number,
+    height: number,
+    name: string,
+    position?: vec3,
+    alignment?: FlexAlignSelf,
+  ): void {
     const root = this.makeObject(parent, name, position)
     const image = root.createComponent("Component.Image") as Image
     const material = IMAGE_MATERIAL.clone()
@@ -151,6 +159,8 @@ export class LingoSpaceCompletionUI extends BaseScriptComponent {
       const item = root.createComponent(FlexItem.getTypeName()) as FlexItem
       item.overrideWidth = width
       item.overrideHeight = height
+      item.flexShrink = 0
+      if (alignment !== undefined) item.alignSelf = alignment
     }
   }
 
