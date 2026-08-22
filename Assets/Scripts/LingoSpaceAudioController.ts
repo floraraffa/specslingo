@@ -11,11 +11,11 @@ export class LingoSpaceAudioController {
 
   constructor(owner: SceneObject) {
     this.click = this.create(owner, CLICK, 0.55)
-    this.saved = this.create(owner, SAVED, 0.65)
+    this.saved = this.create(owner, SAVED, 0.22)
     this.softReturn = this.create(owner, SOFT_RETURN, 0.4)
   }
 
-  initializeForSpecs(backgroundMusic?: AudioTrackAsset, backgroundMusicVolume: number = 0.18): void {
+  initializeForSpecs(backgroundMusic?: AudioTrackAsset, backgroundMusicVolume: number = 0.06): void {
     this.click.playbackMode = Audio.PlaybackMode.LowLatency
     this.saved.playbackMode = Audio.PlaybackMode.LowLatency
     this.softReturn.playbackMode = Audio.PlaybackMode.LowLatency
@@ -23,7 +23,8 @@ export class LingoSpaceAudioController {
       console.log("LINGO SPACE background music: none selected")
       return
     }
-    this.music = this.create(this.click.getSceneObject().getParent(), backgroundMusic, Math.max(0, Math.min(1, backgroundMusicVolume)))
+    const quietBackgroundVolume = Math.max(0, Math.min(0.06, backgroundMusicVolume))
+    this.music = this.create(this.click.getSceneObject().getParent(), backgroundMusic, quietBackgroundVolume)
     this.music.playbackMode = Audio.PlaybackMode.LowPower
     this.music.play(-1)
     console.log(`LINGO SPACE background music: ${backgroundMusic.name}`)

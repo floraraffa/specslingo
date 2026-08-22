@@ -43,7 +43,7 @@ export class LingoSpaceMain extends BaseScriptComponent {
   @input @hint("Round completion UIKit module") completionUI!: LingoSpaceCompletionUI
   @input @hint("Show collider debug visuals") debugColliders: boolean = false
   @input @allowUndefined @hint("Optional background AudioTrack. Leave empty for silence; drag your own music here in the Inspector.") backgroundMusic?: AudioTrackAsset
-  @input @hint("Background music volume from 0 (silent) to 1 (full volume)") backgroundMusicVolume: number = 0.18
+  @input @hint("Background music volume from 0 (silent) to 1 (full volume). Recommended: 0.06.") backgroundMusicVolume: number = 0.06
 
   private nativeLanguage: LanguageId | null = null
   private targetLanguage: LanguageId | null = null

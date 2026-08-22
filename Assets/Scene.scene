@@ -4050,7 +4050,6 @@
   ScriptInputsDefault:
     debugColliders: true
     backgroundMusic: true
-    backgroundMusicVolume: true
   ScriptTypesDefault:
     {}
   ScriptInputs:
@@ -4060,7 +4059,7 @@
       completionUI: !<MappingBased.AssignableType_3> e1ff0b4e-b83b-4d4f-a60e-e9eb7021962d
       debugColliders: false
       backgroundMusic: !<reference.AudioTrackAsset> 00000000-0000-0000-0000-000000000000
-      backgroundMusicVolume: 0.180000
+      backgroundMusicVolume: 0.060000
   ScriptTypes:
     "":
       {}

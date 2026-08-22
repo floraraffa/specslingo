@@ -58,4 +58,4 @@
     - '// @input AssignableType_3 completionUI {"hint":"Round completion UIKit module"}'
     - '// @input bool debugColliders {"hint":"Show collider debug visuals"}'
     - '// @input Asset.AudioTrackAsset backgroundMusic {"hint":"Optional background AudioTrack. Leave empty for silence; drag your own music here in the Inspector."}'
-    - '// @input float backgroundMusicVolume = 0.18 {"hint":"Background music volume from 0 (silent) to 1 (full volume)"}'
+    - '// @input float backgroundMusicVolume = 0.06 {"hint":"Background music volume from 0 (silent) to 1 (full volume). Recommended: 0.06."}'
